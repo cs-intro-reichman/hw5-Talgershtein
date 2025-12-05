@@ -82,15 +82,6 @@ public class Wordle {
         return true;
     }
 
-    public static boolean isInDictionary(String guess, String[] dict) {
-        for (int i = 0; i < dict.length; i++) {
-            if (guess.equals(dict[i])) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public static void main(String[] args) {
 
         int WORD_LENGTH = 5;
@@ -121,7 +112,7 @@ public class Wordle {
             while (!valid) {
                 System.out.print("Enter your guess (5-letter word): ");
                 guess = inp.readString().toUpperCase();
-                if (guess.length() != WORD_LENGTH || !isInDictionary(guess, dict)) {
+                if (guess.length() != WORD_LENGTH){
                     System.out.println("Invalid word. Please try again.");
                 } else {
                     valid = true;
